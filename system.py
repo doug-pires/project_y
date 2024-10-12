@@ -14,36 +14,48 @@ We can use the following data structure to store the information:
 - List of List
 [["Laptop", 1000, 2], ["Mouse", 20, 5], ["Keyboard", 50, 3]]
 
+- I want to refactor my code to use a dictionary and store like this:
+[
+{"name": "Laptop", "price": 1000, "quantity": 2},
+{"name": "Mouse", "price": 20, "quantity": 5},
+{"name": "Keyboard", "price": 50, "quantity": 3}
+
+]
+
 """
 
+import json
+
 main_list = []
-product_list = []
+product_dict = {}
 
 while True:
     # Register the product using the input function
     name = input("Enter the name of the product: ")
-    product_list.append(name)
+    product_dict.update({"name": name})
 
     # Register the price of the product using the input function
     price = input("Enter the price of the product: ")
-    product_list.append(price)
+    product_dict.update({"price": float(price)})
 
     # Register the quantity of the product using the input function
     quantity = input("Enter the quantity of the product: ")
 
     # Append the quantity to the product list
-    product_list.append(quantity)
+    product_dict.update({"quantity": int(quantity)})
 
     # Append the product list to the main list
-    main_list.append(product_list)
+    main_list.append(product_dict)
 
     # Clear the product list
-    product_list = []
+    product_dict = {}
 
     # Ask the user if they want to add more products
     answer = input("Do you want to add more products? (yes/no): ")
 
     if answer == "no":
+        with open("data/products.json", "w") as file:
+            json.dump(main_list, file)
         break
 
 

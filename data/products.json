@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Iphone 16 Pro Max",
+        "price": 1749.5,
+        "quantity": 2
+    },
+    {
+        "name": "Laptop ASUS TUF",
+        "price": 1800.52,
+        "quantity": 1
+    },
+    {
+        "name": "Mouse Logitech",
+        "price": 52.52,
+        "quantity": 1
+    }
+]
