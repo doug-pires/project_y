@@ -37,7 +37,7 @@ while True:
     # Register the price of the product using the input function
     price = input("Enter the price of the product: ")
     product_dict.update({"price": float(price)})
-
+☺☻
     # Register the quantity of the product using the input function
     quantity = input("Enter the quantity of the product: ")
 
